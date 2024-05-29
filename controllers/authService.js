@@ -27,7 +27,7 @@ async function loginWithGoogle(token) {
     await user.save();
   }
 
-  const jwtToken = jwt.sign({ userId: user._id }, "teegeekstoken", {
+  const jwtToken = jwt.sign({ userId: user._id }, process.env.JWT_SECRET_KEY, {
     expiresIn: "1h",
   });
   return jwtToken;

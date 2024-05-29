@@ -74,7 +74,7 @@ exports.login = async (req, res) => {
       return res.status(401).json({ message: "Invalid credentials" });
     }
 
-    const secretKey = "teegeekstoken";
+    const secretKey = process.env.JWT_SECRET_KEY;
 
     // Generate the JWT
     const token = jwt.sign({ userId: user._id }, secretKey, {

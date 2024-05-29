@@ -20,7 +20,7 @@ const priceController = require("./controllers/priceController");
 const { loginWithGoogle } = require("./controllers/authController");
 
 const app = express();
-const port = process.env.port || 3000;
+const port = process.env.port;
 
 // MongoDB connection string
 const mongoURI = process.env.mongoURI;
