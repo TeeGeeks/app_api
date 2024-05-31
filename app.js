@@ -38,7 +38,9 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Routes
-
+app.get('/', (req, res) => {
+    res.send('Hello... your backend server is connected!');
+});
 app.post("/create_quotation", createQuotation);
 app.get("/quotations", getQuotations);
 app.post("/users", upload, userController.createUser);
